@@ -3,17 +3,22 @@ import ProductForm from './components/ProductForm.vue';
 </script>
 
 <template>
-  <div
-    class="
-      admin-container
-      d-flex
-      flex-row
-      justify-content-center
-      align-items-center
-      p-20
-    "
-  >
-    <ProductForm />
+  <div class="admin-container d-flex flex-row p-20">
+    <AdminNav class="admin-nav" />
+    <div
+      class="
+        admin-main
+        flex-fill
+        d-flex
+        flex-row
+        justify-content-center
+        align-items-center
+      "
+    >
+      <router-view v-slot="{ Component, route }">
+        <Component :is="Component" :key="route.fullPath" />
+      </router-view>
+    </div>
   </div>
 </template>
 
