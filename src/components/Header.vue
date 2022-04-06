@@ -93,10 +93,6 @@ header {
     cursor: pointer;
   }
 
-  a.router-link-active {
-    text-decoration: underline;
-  }
-
   .actions-container {
     @include mixins.xs {
       justify-content: end;
